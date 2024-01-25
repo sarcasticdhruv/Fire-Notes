@@ -9,7 +9,7 @@ To use Firenotes, follow the instructions below:
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/Firenotes.git
+   git clone https://github.com/sarcasticdhruv/Fire-Copy-Paste.git
    ```
 
 2. Open the `index.html` file in your preferred web browser.
