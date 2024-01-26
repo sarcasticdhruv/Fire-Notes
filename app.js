@@ -1,43 +1,47 @@
 const firebaseConfig = require('./firebaseConfig');
   
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
-  const auth = firebase.auth();
-  
-  const loginForm = document.getElementById("login-form");
-  const registerForm = document.getElementById("register-form");
-  const noteForm = document.getElementById("note-form");
-  const notesContainer = document.getElementById("notes-container");
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+const auth = firebase.auth();
+
+const loginForm = document.getElementById("login-form");
+const registerForm = document.getElementById("register-form");
+const noteForm = document.getElementById("note-form");
+const notesContainer = document.getElementById("notes-container");
   
   // Show/hide containers
-  const showContainer = (containerId) => {
-    const containers = document.getElementsByClassName("container");
-    for (const container of containers) {
-      container.style.display = "none";
-    }
-    document.getElementById(containerId).style.display = "block";
-  };
+const showContainer = (containerId) => {
+const containers = document.getElementsByClassName("container");
+for (const container of containers) {
+    container.style.display = "none";
+}
+document.getElementById(containerId).style.display = "block";
+};
   
- // Login
+// Add a submit event listener to the login form
 loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const passphrase = loginForm.login_passphrase.value;
-    auth.signInWithEmailAndPassword("", "").then((userCredential) => {
-      const user = userCredential.user;
-      user.updatePassword(passphrase).then(() => {
-        // Password updated successfully
-        showContainer("home-container");
-        loadNotes();
-      }).catch((error) => {
-        alert("Error updating password: " + error.message);
-      });
-    }).catch((error) => {
-      alert("Invalid passphrase: " + error.message);
+  e.preventDefault();
+
+  // Get the passphrase input value
+  const email = loginForm["login-email"].value;
+  const passphrase = loginForm["login-passphrase"].value;
+
+  // Sign in the user with the passphrase
+  auth.signInWithEmailAndPassword(email, passphrase)
+    .then(() => {
+      // If the sign-in is successful, open the home page
+      document.getElementById("main-container").classList.add("hidden");
+      document.getElementById("home-container").classList.remove("hidden");
+      console.log("Succesful");
+    })
+    .catch((error) => {
+      // If the sign-in is unsuccessful, prompt the wrong passphrase message
+      alert("Wrong passphrase");
     });
-  });
+});
   
   // Register
-  registerForm.addEventListener("submit", (e) => {
+registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const name = registerForm.register_name.value;
     const email = registerForm.register_email.value;
@@ -57,7 +61,13 @@ loginForm.addEventListener("submit", (e) => {
           name,
           email,
           notes: {},
-        }).catch((error) => {
+        })
+        .then(() => {
+          alert("User registered successfully!");
+          showContainer("home-container");
+          loadNotes();
+        })
+        .catch((error) => {
           alert("Error registering user: " + error.message);
         });
       })
