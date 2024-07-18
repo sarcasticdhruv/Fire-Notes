@@ -2,10 +2,9 @@
 
 Fire Notes is a web application designed for capturing and organizing your thoughts securely and intuitively. Built with Firebase, it offers real-time data storage and synchronization across all clients.
 
-![Fire Notes](https://user-images.githubusercontent.com/sarcasticdhruv/fire-notes/fire-notes.png)
-
 Visit the application here: [Fire Notes](https://firexnotes.netlify.app)
 
+![Fire Notes](https://user-images.githubusercontent.com/sarcasticdhruv/Fire-Notes/img/fire-notes.gif)
 
 ## Features
 
