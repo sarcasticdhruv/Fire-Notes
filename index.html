@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireCopy</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <h1 id="head">Fire Notes</h1>
+        <nav>
+            <ul>
+                <li><button id="login-link"class="animated-button">
+                    <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                      ></path>
+                    </svg>
+                    <span class="text">Login</a></span>
+                    <span class="circle"></span>
+                    <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                      ></path>
+                    </svg>
+                  </button>
+                  </li>
+                  <li><button id="register-link"class="animated-button">
+                    <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                      ></path>
+                    </svg>
+                    <span class="text">Register</a></span>
+                    <span class="circle"></span>
+                    <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                      ></path>
+                    </svg>
+                  </button>
+                  </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- welcome-message -->
+    <div id="welcome-message">
+        <h2>Welcome to Fire Notes!</h2>
+        <p>Capture and organize your thoughts with ease. Fire Notes offers a secure and intuitive platform for note taking.</p>
+    </div>
+
+    <!-- <div class="row home-content__main">
+        <h3>Welcome to Glint</h3>
+        <h1> We are a creative group <br> of people who design <br> influential brands and <br> digital experiences.</h1>
+    </div> -->
+
+    <!-- login / register -->
+    <div class="container">
+
+        <!-- login -->
+        <div id="login" class="wrapper hidden">
+            <form id="login-form">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="text" id="login-email" placeholder="Email" required>
+                    <i class='bx bx-user' ></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="login-passphrase" placeholder="6-digit numeric passphrase" required >
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" id = "login-button" class="btn">Login</button>
+                
+                <div class="register-link">
+                    <p>Don't have an accout? <a href="#" id="toRegister" >Register</a> </p>
+                </div>
+            </form>
+        </div>
+
+        <!-- register -->
+        <div id="register" class="hidden wrapper">
+            <form id="register-form">
+                <h1>Register</h1>
+
+                <div class="input-box">
+                    <input type="text" id="register-name" placeholder="Name" required>
+                    <i class='bx bxs-user' ></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="email" id="register-email" placeholder="Email" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" id="register-passphrase" placeholder="6-digit numeric passphrase" maxlength="6" pattern="[0-9]{6}" title="6-digit numeric passphrase" required>
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" id="register-confirm-passphrase" placeholder="Confirm passphrase" maxlength="6" required>
+                    <i class='bx bxs-lock'></i>
+                </div>
+
+                <button type="submit" class="btn" id="register-button">Register</button>
+                
+            </form>
+        </div>
+    </div>
+
+    <div class="alert" style="display: none;"></div>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="js/script.js"></script>
+
+    <footer>
+        <p>&copy; 2024 Fire Notes</p>
+    </footer>
+
+</body>
+</html>

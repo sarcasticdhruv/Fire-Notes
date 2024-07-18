@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: #9A8C7A;
+    background-size: cover;
+    background-position: center;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+}
+
+header h1,span{
+    color: #F8F9F8;
+    font: normal 1.2em 'Quicksand', helvetica, arial, sans-serif;
+}
+
+button{
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    margin: 4px 2px;
+    padding: 8px 15px;
+    
+}
+
+button a {
+    color: #000000; /* Change this to your desired color */
+    text-decoration: none;
+}
+button:hover{
+    background-color: rgb(56, 89, 139);
+    color: whitesmoke;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 1fr;
+    height: 100vh;
+    border: #000000;
+}
+
+#navbar-username{
+    padding-right: 40px;
+    display: inline-flex;
+    align-items: center;
+  }
+span{
+    font-weight: 400;
+}
+
+.FuncNotes{
+    height: 100%;
+    border-right: 3px solid black;
+    padding: 10px 10px;
+    background-image: radial-gradient(at 50% 50%, #ffffff 0%, #a3a3a3 50%, #44322c 100%);
+    background-size: 200% 200%;
+    /* animation: Gradient 7s ease infinite; */
+    display: block;
+}
+
+/* @keyframes Gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+} */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px; /* Reduced padding */
+    background: #464749;
+    /* background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(5px) saturate(180%); */
+    box-shadow: 0 0 5px rgba(209, 187, 187, 0.1);
+    height: 100%;
+}
+
+button:hover {
+    background-color: rgb(183, 212, 255);
+    color: rgb(5, 7, 112);
+    box-shadow: 0 0 15px rgba(56, 89, 139, 0.5); /* Added hover box-shadow */
+}
+
+.FuncNotes .ViewNotes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 20px 10px;
+  }
+  
+.FuncNotes .note {
+background-color: #d8e7d8;
+padding: 10px;
+border-radius: 5px;
+}
+
+.note{
+    margin: 10px;
+}
+
+button #add-note-button {
+    margin-bottom: 20px;
+} 
+  #navbar-username {
+    margin-right: 10px;
+    font-size: 1em;
+    font-weight: 600;
+  }
+
+  textarea {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+#note-title{
+    font-weight: bold;
+    height: 6.5%;
+}
+
+#note-body{
+    height: 84.5%;
+}
+
+.note.active {
+    background-color: #ffee00;
+  }
+
+  #timestamp {
+    padding: 10px 25px;
+    color: rgb(255, 255, 255);
+    font-family: 'Segoe UI';
+    font-weight: 500;
+  }
+  
+
+   #adjust{
+    display: flex;
+    justify-content: space-between;
+    background: #9A8C7A;
+   }
+
+   .no-notes-message {
+    text-align: center;
+    font-style: italic;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+  }
+
+  #back{
+    display: none;
+  }
+  @media screen and (max-width: 768px) {
+    header h1,span{
+        color: #F8F9F8;
+        font: normal 1em 'Quicksand', helvetica, arial, sans-serif;
+    }
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    main {
+      grid-template-columns: 1fr;
+    }
+  
+    .ViewNotes {
+      display: none;
+    }
+
+    .unk{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .unk button{
+        height: 35px;
+    }
+    nav{
+        margin-top: 8px;
+    }
+    header h1{
+        color:#333;
+        font-weight: 600;
+    }
+    .log{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 2px solid #000; /* Adds a solid black border */
+        padding: 9px 17px; /* Adds space inside the box around its content */
+        background-color: #dee29f; /* Sets a light grey background color */
+        /* Additional box styling */
+        border-radius: 10px; /* Optional: Adds rounded corners */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow */
+      }
+      #timestamp{
+        color: #000;
+      }
+  }
+
+  header img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px; 
+  }
+
+  .log{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #signin-modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    z-index:1000;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-size: large;
+  }
+
+  #signin-btn{
+    margin-top: 2vh;
+    border: 2px solid black;
+  }
+
+  #signin-btn:hover{
+    border: #d8e7d8;
+  }
+
+  #signin-modal .signin-sub{
+    padding:20px;
+    background:rgb(255, 255, 255);
+    border-radius:2px;
+    border-radius: 4px;
+  }
