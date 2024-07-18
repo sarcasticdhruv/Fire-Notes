@@ -2,6 +2,11 @@
 
 Fire Notes is a web application designed for capturing and organizing your thoughts securely and intuitively. Built with Firebase, it offers real-time data storage and synchronization across all clients.
 
+![Fire Notes](https://user-images.githubusercontent.com/sarcasticdhruv/fire-notes/fire-notes.png)
+
+Visit the application here: [Fire Notes](https://firexnotes.netlify.app)
+
+
 ## Features
 
 - **User Authentication**: Secure login and registration functionality.
@@ -20,7 +25,6 @@ To run Fire Notes locally, follow these steps:
 
 1. Clone the repository to your local machine.
 2. Open `index.html` in your browser to access the login/register page.
-3. Navigate to `notes.html` after logging in to view and manage your notes.
 
 ## File Structure
 
@@ -29,11 +33,6 @@ To run Fire Notes locally, follow these steps:
 - `js/app.js`: Contains the JavaScript code for Firebase integration and dynamic UI interactions.
 - `css/styles.css`: The main stylesheet for `index.html`.
 - `css/styles_notes.css`: The stylesheet for `notes.html`.
-
-## Dependencies
-
-- Firebase SDK: For backend services including authentication and real-time database.
-  - Included via CDN in `notes.html`.
 
 ## Contributing
 
@@ -47,5 +46,3 @@ Fire Notes is open-source software licensed under the MIT license.
 
 - Firebase for providing a powerful backend-as-a-service solution.
 - Boxicons for the beautiful icons used throughout the application.
-
-For more information, please visit the [Fire Notes GitHub repository](#).
