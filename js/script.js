@@ -3,13 +3,16 @@ document.getElementById('head').addEventListener('click', function(event) {
     document.getElementById('welcome-message').classList.remove('hidden');
     document.getElementById('login').classList.add('hidden');
     document.getElementById('register').classList.add('hidden');
+    document.getElementsByClassName("container")[0].classList.add('hidden');
     });
 
 document.getElementById('login-link').addEventListener('click', function(event) {
 event.preventDefault(); // prevent the default action (page scroll to the id)
+
 document.getElementById('welcome-message').classList.add('hidden');
 document.getElementById('register').classList.add('hidden');
 document.getElementById('login').classList.remove('hidden');
+document.getElementsByClassName("container")[0].classList.remove('hidden');
 });
 
 document.getElementById('register-link').addEventListener('click', function(event) {
@@ -17,8 +20,29 @@ event.preventDefault(); // prevent the default action (page scroll to the id)
 document.getElementById('welcome-message').classList.add('hidden');
 document.getElementById('login').classList.add('hidden');
 document.getElementById('register').classList.remove('hidden');
+document.getElementsByClassName("container")[0].classList.remove('hidden');
 });
 
+document.querySelectorAll('.toggle-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const targetId = button.getAttribute('data-target');
+    const targetElement = document.getElementById(targetId);
+
+    // Cek apakah konten sudah aktif
+    if (targetElement.classList.contains('active')) {
+      // Jika aktif, sembunyikan konten
+      targetElement.classList.remove('active');
+    } else {
+      // Menyembunyikan semua konten terlebih dahulu
+      document.querySelectorAll('.content').forEach(content => {
+        content.classList.remove('active');
+      });
+
+      // Menampilkan konten yang sesuai dengan tombol yang ditekan
+      targetElement.classList.add('active');
+    }
+  });
+});
 
 const firebaseConfig = {
   apiKey: "Your API Key",
