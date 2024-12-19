@@ -51,10 +51,6 @@
     z-index: 6;
 }
 
-
-
-
-
 .secure-bg {
     background-color: transparent;
     backdrop-filter: blur(20px);
