@@ -1,6 +1,7 @@
 document.getElementById('head').addEventListener('click', function(event) {
     event.preventDefault(); // prevent the default action (page scroll to the id)
     document.getElementById('welcome-message').classList.remove('hidden');
+    document.getElementById('footer').classList.remove('hidden')
     document.getElementById('login').classList.add('hidden');
     document.getElementById('register').classList.add('hidden');
     document.getElementsByClassName("container")[0].classList.add('hidden');
@@ -8,7 +9,7 @@ document.getElementById('head').addEventListener('click', function(event) {
 
 document.getElementById('login-link').addEventListener('click', function(event) {
 event.preventDefault(); // prevent the default action (page scroll to the id)
-
+document.getElementById('footer').classList.add('hidden')
 document.getElementById('welcome-message').classList.add('hidden');
 document.getElementById('register').classList.add('hidden');
 document.getElementById('login').classList.remove('hidden');
@@ -18,6 +19,7 @@ document.getElementsByClassName("container")[0].classList.remove('hidden');
 document.getElementById('register-link').addEventListener('click', function(event) {
 event.preventDefault(); // prevent the default action (page scroll to the id)
 document.getElementById('welcome-message').classList.add('hidden');
+document.getElementById('footer').classList.add('hidden');
 document.getElementById('login').classList.add('hidden');
 document.getElementById('register').classList.remove('hidden');
 document.getElementsByClassName("container")[0].classList.remove('hidden');
