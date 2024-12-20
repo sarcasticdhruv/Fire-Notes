@@ -30,21 +30,29 @@ document.querySelectorAll('.toggle-button').forEach(button => {
     const targetId = button.getAttribute('data-target');
     const targetElement = document.getElementById(targetId);
 
-    // Cek apakah konten sudah aktif
     if (targetElement.classList.contains('active')) {
-      // Jika aktif, sembunyikan konten
+      
       targetElement.classList.remove('active');
     } else {
-      // Menyembunyikan semua konten terlebih dahulu
+     
       document.querySelectorAll('.content').forEach(content => {
         content.classList.remove('active');
       });
 
-      // Menampilkan konten yang sesuai dengan tombol yang ditekan
       targetElement.classList.add('active');
     }
   });
 });
+
+window.addEventListener("scroll", () => {
+  const check = window.scrollY
+  if (check == 0) {
+    document.getElementById("head-nav").classList.add("head-nav")
+  } else if (check > 0) {
+    document.getElementById("head-nav").classList.remove("head-nav")
+  }
+  console.log(check)
+})
 
 const firebaseConfig = {
   apiKey: "Your API Key",

@@ -231,6 +231,7 @@ header {
     top: -10px;
     box-shadow: 3px 0px 9px 3px black;
     z-index: 9999;
+    padding: 10px 20px !important;
 }
 
 #head:hover{
@@ -559,18 +560,44 @@ footer {
     color: white;
 }
 
+.head-nav {
+    background-color: transparent !important;
+    backdrop-filter: blur(0px);
+    box-shadow: none;
+    position: absolute;
+   
+   padding: 20px 20px !important;
+}
+
+header {
+    transition: 0.3s ease-out;
+    
+}
+
 @media (max-width: 768px) {
 
     .container{
-        padding: 190px 10px;
-        height: 100%;
+        padding: 0px 10px;
+        height: 100vh;
+        
+    }
+
+    .head-nav {
+        background-color: transparent !important;
+        backdrop-filter: blur(0px);
+        box-shadow: none;
+        
     }
 
 
     header{
         padding: 10px 40px;
         padding-top: 40px;
+        display: flex;
+        flex-direction: column;
     }
+
+    
 
     header h1{
         margin-bottom: 3.5vh;
@@ -618,6 +645,10 @@ footer {
 
     .sub-title {
         font-size: 16px;
+    }
+
+    #login {
+        margin-top: 200px;
     }
 }
 
