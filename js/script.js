@@ -1,24 +1,58 @@
 document.getElementById('head').addEventListener('click', function(event) {
     event.preventDefault(); // prevent the default action (page scroll to the id)
     document.getElementById('welcome-message').classList.remove('hidden');
+    document.getElementById('footer').classList.remove('hidden')
     document.getElementById('login').classList.add('hidden');
     document.getElementById('register').classList.add('hidden');
+    document.getElementsByClassName("container")[0].classList.add('hidden');
     });
 
 document.getElementById('login-link').addEventListener('click', function(event) {
 event.preventDefault(); // prevent the default action (page scroll to the id)
+document.getElementById('footer').classList.add('hidden')
 document.getElementById('welcome-message').classList.add('hidden');
 document.getElementById('register').classList.add('hidden');
 document.getElementById('login').classList.remove('hidden');
+document.getElementsByClassName("container")[0].classList.remove('hidden');
 });
 
 document.getElementById('register-link').addEventListener('click', function(event) {
 event.preventDefault(); // prevent the default action (page scroll to the id)
 document.getElementById('welcome-message').classList.add('hidden');
+document.getElementById('footer').classList.add('hidden');
 document.getElementById('login').classList.add('hidden');
 document.getElementById('register').classList.remove('hidden');
+document.getElementsByClassName("container")[0].classList.remove('hidden');
 });
 
+document.querySelectorAll('.toggle-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const targetId = button.getAttribute('data-target');
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement.classList.contains('active')) {
+      
+      targetElement.classList.remove('active');
+    } else {
+     
+      document.querySelectorAll('.content').forEach(content => {
+        content.classList.remove('active');
+      });
+
+      targetElement.classList.add('active');
+    }
+  });
+});
+
+window.addEventListener("scroll", () => {
+  const check = window.scrollY
+  if (check == 0) {
+    document.getElementById("head-nav").classList.add("head-nav")
+  } else if (check > 0) {
+    document.getElementById("head-nav").classList.remove("head-nav")
+  }
+  console.log(check)
+})
 
 const firebaseConfig = {
   apiKey: "Your API Key",
